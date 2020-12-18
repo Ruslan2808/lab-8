@@ -8,20 +8,20 @@ int menuClient();
 
 template <class T>
 class Document {
-	T str;
+	T data;
 public:
 	Document() {}
-	Document(T st) {
-		str = st;
+	Document(T dat) {
+		data = dat;
 	}
 	void Show() {
-		cout << str << endl;
+		cout << data << endl;
 	}
-	void Change(T st) {
-		str = st;
+	void Change(T dat) {
+		data = dat;
 	}
-	void AddDoc(T st) {
-		str += st;
+	void AddDoc(T dat) {
+		data += dat;
 	}
 	~Document()
 	{
