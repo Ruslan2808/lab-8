@@ -54,6 +54,18 @@ public:
 	SmartDocument(const SmartDocument<T1>& p) :StatPtr(p.StatPtr) {
 		if (StatPtr) StatPtr->Count++;
 	}
+	SmartDocument<T1>& operator=(const SmartDocument<T1>& p) {
+		if (StatPtr) {
+			StatPtr->Count--;
+			if (StatPtr->Count <= 0) {
+				delete StatPtr->RealPtr;
+				delete StatPtr;
+			}
+		}
+		StatPtr = p.StatPtr;
+		if (StatPtr) StatPtr->Count++;
+		return *this;
+	}
 	~SmartDocument() {
 		if (StatPtr) {
 			StatPtr->Count--;
