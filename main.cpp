@@ -20,7 +20,7 @@ public:
 	void Change(T dat) {
 		data = dat;
 	}
-	void AddDoc(T dat) {
+	void Add(T dat) {
 		data += dat;
 	}
 	~Document()
@@ -84,12 +84,12 @@ int main() {
 				case 0:
 					cout << "Введите информацию, которую хотите добавить:";
 					cin >> str;
-					pt1->AddDoc(str);
+					pt1->Add(str);
 					break;
 				case 1:
 					cout << "Введите информацию, которую хотите добавить:";
 					cin >> str;
-					pt2->AddDoc(str);
+					pt2->Add(str);
 					break;
 				case 2:
 					cout << "Введите информацию:";
@@ -122,12 +122,12 @@ int main() {
 				case 0:
 					cout << "Введите информацию, которую хотите добавить:";
 					cin >> str;
-					pt1->AddDoc(str);
+					pt1->Add(str);
 					break;
 				case 1:
 					cout << "Введите информацию, которую хотите добавить:";
 					cin >> str;
-					pt2->AddDoc(str);
+					pt2->Add(str);
 					break;
 				case 2:
 					cout << "Введите информацию:";
