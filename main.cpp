@@ -25,7 +25,7 @@ public:
 	}
 	~Document()
 	{
-
+		cout << "Объект удален" << endl;
 	}
 };
 
