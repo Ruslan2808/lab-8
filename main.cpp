@@ -62,16 +62,16 @@ public:
 				delete StatPtr;
 			}
 		}
-		cout << "\nУказатель удален" << endl;
+		cout << "Указатель удален" << endl;
 	}
 };
-
-
 
 int main() {
 	setlocale(0, "rus");
 	SmartDocument<Document<string>> pt1(new Document<string>);
-	SmartDocument<Document<string>> pt2(new Document<string>);
+	SmartDocument<Document<string>> pt2 = pt1;
+	SmartDocument<Document<string>> pt3(new Document<string>);
+	SmartDocument<Document<string>> pt4 = pt3;
 	string str;
 	bool exit;
 	while (true) {
@@ -89,7 +89,7 @@ int main() {
 				case 1:
 					cout << "Введите информацию, которую хотите добавить:";
 					cin >> str;
-					pt2->Add(str);
+					pt3->Add(str);
 					break;
 				case 2:
 					cout << "Введите информацию:";
@@ -99,13 +99,13 @@ int main() {
 				case 3:
 					cout << "Введите информацию:";
 					cin >> str;
-					pt1->Change(str);
+					pt3->Change(str);
 					break;
 				case 4:
 					cout << "\tДокументация 1" << endl;
 					pt1->Show();
 					cout << "\tДокументация 2" << endl;
-					pt2->Show();
+					pt3->Show();
 					system("pause");
 					break;
 				case 5:
@@ -122,28 +122,28 @@ int main() {
 				case 0:
 					cout << "Введите информацию, которую хотите добавить:";
 					cin >> str;
-					pt1->Add(str);
+					pt2->Add(str);
 					break;
 				case 1:
 					cout << "Введите информацию, которую хотите добавить:";
 					cin >> str;
-					pt2->Add(str);
+					pt4->Add(str);
 					break;
 				case 2:
 					cout << "Введите информацию:";
 					cin >> str;
-					pt1->Change(str);
+					pt2->Change(str);
 					break;
 				case 3:
 					cout << "Введите информацию:";
 					cin >> str;
-					pt1->Change(str);
+					pt4->Change(str);
 					break;
 				case 4:
 					cout << "\tДокументация 1" << endl;
-					pt1->Show();
-					cout << "\tДокументация 2" << endl;
 					pt2->Show();
+					cout << "\tДокументация 2" << endl;
+					pt4->Show();
 					system("pause");
 					break;
 				case 5:
@@ -157,7 +157,7 @@ int main() {
 			cout << "\tДокументация 1" << endl;
 			pt1->Show();
 			cout << "\tДокументация 2" << endl;
-			pt2->Show();
+			pt3->Show();
 			return 0;
 		}
 	}
@@ -236,4 +236,3 @@ int menuClient()
 		system("cls");
 	}
 }
-
